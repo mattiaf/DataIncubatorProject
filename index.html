@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Project Mattia</title>
+	<meta name="author" content="Mattia F." />
+	<meta name="description" content="fullPage full-screen navigation and sections control menu." />
+	<meta name="keywords"  content="fullpage,jquery,demo,screen,fullscreen,navigation,control arrows, dots" />
+	<meta name="Resource-type" content="Document" />
+
+    
+	<link rel="stylesheet" type="text/css" href="css/jquery.fullPage.css" />
+	<link rel="stylesheet" type="text/css" href="css/examples.css" />
+	<link rel="stylesheet" type="text/css" href="css/mattiastyle.css" />
+	<link rel="stylesheet" type="text/css" href="css/slider.css" />
+	<link rel="stylesheet" type="text/css" href="css/chart.css" />
+	<link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Old+Standard+TT' rel='stylesheet' type='text/css'>
+	<style>
+  
+  
+
+         #diagramContainer {
+            position: relative;
+            padding: 80px;
+            width:900px; height: 400px;
+            border: 20px blue;
+            margin: 0 auto;
+        }
+        
+        .item {
+            position: absolute;
+            height: 105px;
+            width: 200px;
+            border: 1px solid white;
+            float: left;
+            background: white;
+            font-size: 18px;
+            color: black;
+        }   
+
+        .item text{
+            color: black;
+        }   
+    
+      svg.redLine path {
+  stroke:red;
+  stroke-width:3;
+}
+         
+	/* Style for our header texts
+	* --------------------------------------- */
+	h1{
+		font-size: 5em;
+		font-family: 'Old Standard TT', serif;
+		color: #fff;
+		margin:0;
+	}
+	.intro p{
+		color: #fff;
+		font-family: 'Old Standard TT', serif;
+	}
+
+	p{
+		color: #fff;
+		font-family: 'Old Standard TT', serif;
+	}
+	/* Centered texts in each section
+	* --------------------------------------- */
+	.section{
+		text-align:center;
+	}
+
+	/* Overwriting styles for control arrows for slides
+	* --------------------------------------- */
+	.controlArrow.prev {
+		left: 150px;
+	}
+	.controlArrow.next{
+		right: 150px;
+	}
+
+
+	#section0{
+		background-image: url('images/Chicago_from_above.jpg');
+		background-size: 100% auto;
+
+	}
+	
+	#section2{
+		background-image: url('images/suburbs.jpg');
+		background-size: 100% auto;
+	}
+
+
+	#section1{
+		background-image: url('images/69851693.jpg');
+		background-size: 100% auto;
+	}
+
+
+
+
+#title {
+    background-color: rgba(0,0,0,0.8);
+    font-family: 'Old Standard TT', serif;
+
+}
+
+
+
+	/* Overwriting styles for the navigation dots (to place it where we want)
+	* --------------------------------------- */
+	.fp-slidesNav.bottom{
+		bottom: 25px;
+	}
+
+	/* Bottom menu
+	* --------------------------------------- */
+	#infoMenu li a {
+		color: #fff;
+	}
+	
+#menu li {
+	display:inline-block;
+	margin: 10px;
+	color: #000;
+	background:#fff;
+	background: rgba(255,255,255, 0.8);
+	-webkit-border-radius: 10px;
+            border-radius: 10px;
+}
+#menu li.active{
+	background:#666;
+	background: rgba(0,0,0, 0.8);
+	color: #fff;
+}
+	
+	</style>
+
+	<!--[if IE]>
+		<script type="text/javascript">
+			 var console = { log: function() {} };
+		</script>
+	<![endif]-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
+    
+
+	<script type="text/javascript" src="js/jquery.slimscroll.min.js"></script>
+    <script src="http://underscorejs.org/underscore.js"></script>
+
+	<script type="text/javascript" src="js/jquery.fullPage.js"></script>
+	<script type="text/javascript" src="js/examples.js"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('#fullpage').fullpage({
+			  sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE', '#222', '#ccddff'],
+			  anchors: ['firstPage', 'secondPage', '3rdPage', '4thPage', 'lastPage'],
+			  menu: '#menu',
+			  continuousVertical: true
+			});
+		});
+
+	</script>
+ 
+ 
+ 
+ 
+  <script src="http://d3js.org/d3.v3.min.js"></script>
+  <script src="http://d3js.org/queue.v1.min.js"></script>
+  <script src="http://d3js.org/topojson.v1.min.js"></script>
+  <script src="http://thematicmapping.org/playground/d3/d3.slider/d3.slider.js"></script>
+  <script src="http://d3js.org/colorbrewer.v1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jsPlumb/1.4.1/jquery.jsPlumb-1.4.1-all-min.js"></script>
+
+  
+
+
+
+
+</head>
+<body>
+
+
+<ul id="menu">
+	<li data-menuanchor="firstPage" class="active"><a href="#firstPage">Intro</a></li>
+	<li data-menuanchor="secondPage"><a href="#secondPage">Map</a></li>
+	<li data-menuanchor="3rdPage"><a href="#3rdPage">Analysis</a></li>
+	<li data-menuanchor="4thPage"><a href="#4thPage">Methods</a></li>
+
+</ul>
+
+
+
+<div id="fullpage">
+	<div class="section " id="section0">
+		<div class="intro" id='title''>
+			<h1>THE PRICE OF CRIME<br><small>predicting real estate from crime rates</small></h1>
+			<p><br>Data from the Trulia API, Open Data Chicago and the Census</p>
+
+		</div>
+	</div>
+	<div class="section" id="section1">
+         <div id="bigcontainer" class="bigcontainers">
+           <div class="checkboxtext" id='checktext' align="left">
+                    <big><big>Show Crimes (Homicides)</big></big>
+                    <input type="checkbox" id="checkcrime" onchange="drawcrimes(valueyear,'check')"> 
+           </div>
+           <div id="slider6"></div>
+        </div>
+             <script src="js/map_and_graph.js"></script>
+
+
+	</div>
+
+
+
+
+	<div class="section" id="section2">
+         <div style="height:700px;width:950px;margin:0 auto;" id="chart" class="bigcontainers" >
+
+         	<h1>Correlations and Clusters</h1>
+
+            <p style="color:white;font-size:18px">Prices of houses have a different degree of correlation with various kind of crimes. I cross-validate a regression model to predict housing prices, with R2=0.84. A k-means analysis on those variables returns 4 categories of neighbourhoods.  
+            <br>
+
+            </p>
+<br>
+			<div id="menuchart" >
+			
+           			<ul id="x-axis-menu"></ul>
+			</div>
+
+			<svg id="chart1" >
+				<ul id="x-axis-menu"></ul>
+			</svg>
+
+
+
+          </div>
+		
+		<script src="js/main.js"></script>
+
+	</div>
+
+	<div class="section" id="section3">
+        
+          <div id="diagramContainer">
+            <div id="item_trulia" class="item" style="top: 30%; left:0%">
+    <img src="http://cdn.geekwire.com/wp-content/uploads/2014/05/trulia-png-300x99.png" alt="Smiley face" height="42" width="200">
+    API: housing prices for every ZIP code in Chicago
+    
+    </div>
+    <div id="item_data" class="item" style="top: 30%; left:25%">
+        <img src="https://www.python.org/static/community_logos/python-logo-master-v3-TM.png" alt="Smiley face" height="42" width="200">
+        pandas, scipy, numpy, scikit
+    </div>
+    
+    <div id="item_Chicago" class="item" style="top: 0%; left:0%">
+    <img src="https://pbs.twimg.com/profile_images/2949074505/342ad4f80b99e7180eeacb0717b5b788_400x400.jpeg" alt="Smiley face" height="52" width="200">
+
+    
+    Database of 1 million crimes</div>
+
+    
+    <div id="item_geocode" class="item" style="top: 0%; left:25%"</div>
+        <img src="http://www.rund-ums-rad.info/bilder/2011/12/logo-osm.jpg" alt="Smiley face" height="52" width="200" >
+        Reverse Geocode: <br> Lat-Lon to ZIP code
+    </div>
+    
+
+    <div id="item_regression" class="item" style="top: 7%; left:50%; height=100"> <b>REGRESSION </b><br><br>Can we predict prices from the occurencies of different crimes?<br></div>
+
+<div id="item_regression2" class="item" style="top: 17%; left:75%"><br>With cross-validation we explain 85% of the observed variance.</div>
+
+<div id="item_k-means" class="item" style="top: 60%; left: 35%"> <b> K-MEANS ANALYSIS</b>: <br> <br>Can we group neighborhoods <br> by their characteristics? </div>
+
+<div id="item_k-means2" class="item" style="top: 70%; left: 60%">We identify 4 categories of neighbourhoods, and they are geographically separated.</div>
+
+<div id="item_visualize" class="item" style="top: 45%; left: 85%">
+<img src="images/D3.png" alt="Smiley face" height="52">
+
+<br>
+Visualize maps and correlations</div>
+
+
+        </div>
+
+
+    <script src="flowchart.js">
+    </script> 
+        
+        
+	</div>
+
+
+
+
+</div>
+
+
+</body>
+</html>

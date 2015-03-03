@@ -1,0 +1,152 @@
+
+.labelchart2{
+ font-size: 22px;   
+}
+
+#legend {
+    padding: 1.5em 0 0 1.5em;
+}
+
+#bigcontainer {
+    width: 980px;
+    margin:0 auto;
+}
+
+
+li.key {
+    border-top-width: 15px;
+    border-top-style: solid;
+    font-size: .75em;
+    width: 10%;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+body { font: 12px Arial;
+
+    background-color: #ddd;
+    background: url('http://chicagophotoshop.smugmug.com/ChicagoEvents/Old-Chicago-Photos/i-bms3gBB/0/X2/vintage-X2.jpg');
+#    background: url('MPP_7325-2.jpg');
+background-size: 100% auto;
+
+}
+
+path { 
+    stroke: #aaa;
+    stroke-width: 1;
+    fill: none;
+}
+
+.xaxis path,
+.xaxis line {
+    fill: none;
+    stroke: white;
+    stroke-width: 1;
+    shape-rendering: crispEdges;
+    font: 15px;
+
+}
+
+.xaxis text {
+		font-family: 'Old Standard TT', serif;
+ font-size: 16px;
+    fill: white;
+
+}
+
+.yaxis text {
+		font-family: 'Old Standard TT', serif;
+    font-size: 16px;
+    fill: white;
+}
+
+
+.yaxis path,
+.yaxis line {
+    fill: none;
+    stroke: white;
+    stroke-width: 1;
+    shape-rendering: crispEdges;
+}
+
+
+.overlay {
+  fill: none;
+  pointer-events: all;
+}
+
+.focus circle {
+  fill: none;
+  stroke: steelblue;
+}
+
+
+
+  .zipareas {
+    fill: #2D465A;
+    opacity: 0.8;
+
+    stroke: black;
+    stroke-width: 1px;
+    stroke-opacity: 1;
+
+  }
+
+  .zipareas_hl {
+    opacity: 1;
+
+    stroke: black;
+    stroke-width: 4;
+  }
+  
+
+	.wrapper div {
+		margin: 35px 0;
+	}
+
+    .wrapper {
+      width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    #slider6 {
+    	height: 10px;
+    	width: 450px;
+    margin-left:50px;
+    }
+
+.bigcontainers {
+  background: rgba(30,30,30,  0.9);
+  		font-family: 'Old Standard TT', serif;
+
+    }
+
+.containerd3 {
+// margin:0 10%;
+ // border:0px solid #000;
+  //border-radius: 5px;
+
+  overflow:hidden;
+  background: #7D8E9C;
+}
+.hidden { 
+  display: none; 
+}
+div.tooltip {
+  color: #EEE; 
+  padding: .5em; 
+  border-radius: 2px; 
+  box-shadow: 0px 0px 2px 0px #a6a6a6; 
+  opacity: 1.0; 
+  position: absolute;
+  font-size: 16px;
+
+  background: #666; // #F0F8FF;
+
+}
+
+.checkboxtext{
+ font-size: 15px;
+ color: white;
+}

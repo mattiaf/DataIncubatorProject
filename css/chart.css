@@ -1,0 +1,68 @@
+#menuchart {
+  position: centered;
+  top: 265px;
+  left: 600px;
+  width: 300px;
+}
+
+#menuchart text {
+    font-size: 11px;
+    fill: white;
+    font-family: 'Droid Sans', sans-serif;
+}
+
+
+
+
+
+#x-axis-menu text {
+    font-size: 11px;
+    fill: white;
+    font-family: 'Droid Sans', sans-serif;
+}
+
+
+.li2 {
+  color: #fff;
+  cursor: pointer;
+  padding-bottom: 5px;
+  font-size: 15px;
+      display: inline;
+ padding: 5px 20px 5px 20px;
+ font-family: 'Droid Sans', sans-serif;
+ text-decoration: underline;
+}
+
+.li2:hover {
+  color: orange;
+}
+
+.li2.preview {
+  font-weight: 400;
+}
+
+.li2.selected {
+font-weight: bold;
+text-decoration: underline;
+
+}
+
+.axis tick, .axis text {
+ color: #fff;
+ font-size=25px;
+		font-family: 'Old Standard TT', serif;
+}
+
+#xAxis path, #yAxis path, #xAxis line, #yAxis line {
+	stroke: #ccc;
+	fill: none;
+	shape-rendering: crispEdges;
+		font-family: 'Old Standard TT', serif;
+}
+
+
+#yAxis text, #xAxis text {
+fill: white;
+font-size: 20px;
+		font-family: 'Old Standard TT', serif;
+}
